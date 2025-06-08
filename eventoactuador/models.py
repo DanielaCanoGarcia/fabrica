@@ -14,7 +14,6 @@ class EventoActuador(models.Model):
     fecha = models.DateField()
     hora = models.TimeField()
     usuario = models.ForeignKey(Usuario, on_delete=models.SET_NULL, null=True, blank=True, related_name='eventos_actuador')
-    ubicacion = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return f"{self.fecha} {self.hora} - {self.accion} ({self.modo_activa}) - Actuador {self.actuador.nombre}"
